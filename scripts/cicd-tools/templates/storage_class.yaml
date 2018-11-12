@@ -1,0 +1,7 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: ${{storage.class.name}}
+provisioner: kubernetes.io/no-provisioner
+# Choosing immediate since we only have one node. Alternative is 'WaitForFirstConsumer'
+volumeBindingMode: Immediate

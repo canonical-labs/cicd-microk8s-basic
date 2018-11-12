@@ -1,0 +1,4 @@
+# The configs directory is for realized (auto-generated) yamls. Ignore *.yaml's in there.
+scripts/cicd-tools/configs/
+# snaps/ holds cached snaps .. don't check in .. use download-snaps.sh to populate.
+scripts/cicd-tools/snaps/

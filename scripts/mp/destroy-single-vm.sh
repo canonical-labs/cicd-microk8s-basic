@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e  # exit immediately on error
+set -u  # fail on undeclared variables
 
 # In case the script is invoked from a different directory, grab mine
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
@@ -11,7 +14,7 @@ exit_no_multipass
 if vm_exists ${SINGLE_VM_NAME} ; then
   multipass delete ${SINGLE_VM_NAME}
   multipass purge
-  info "${SINGLE_VM_NAME} exists. Deleting and purging."
+  info "Deleting and purging VM '${SINGLE_VM_NAME}'."
 else
-  info "${SINGLE_VM_NAME} doesn't exist. Ignoring clean command."
+  info "The VM ${SINGLE_VM_NAME} does **not** exist."
 fi

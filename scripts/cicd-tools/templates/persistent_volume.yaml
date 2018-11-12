@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: ${{storage.pv.name}}
+  labels:
+    type: local
+spec:
+  storageClassName: ${{storage.class.name}}
+  capacity:
+    storage: ${{storage.capacity.pv}}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: ${{storage.path}}

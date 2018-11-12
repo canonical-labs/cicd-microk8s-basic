@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ${{storage.pvc.name}}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: ${{storage.class.name}}
+  resources:
+    requests:
+      storage: ${{storage.capacity.pvc}}
