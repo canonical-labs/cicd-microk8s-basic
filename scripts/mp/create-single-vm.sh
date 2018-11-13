@@ -10,6 +10,7 @@ SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 CICD_SCRIPTS_SRC=${CICD_SCRIPTS_SRC:-"${SCRIPTS_DIR}/../cicd-tools"}
 CLOUD_INIT=${CLOUD_INIT:-"${SCRIPTS_DIR}/cloud.init"}
+VM_MEM=${VM_MEM:-8G}
 
 # need mutlipass to launch the vm
 exit_no_multipass
@@ -19,7 +20,11 @@ if vm_exists ${SINGLE_VM_NAME} ; then
   exit_error "${SINGLE_VM_NAME} already exists! Exiting."
 else
   info "CREATING ${SINGLE_VM_NAME}"
-  multipass launch --name ${SINGLE_VM_NAME} --cloud-init ${CLOUD_INIT} ${VM_IMAGE}
+  multipass launch \
+      --name ${SINGLE_VM_NAME} \
+      --mem ${VM_MEM} \
+      --cloud-init ${CLOUD_INIT} \
+      ${VM_IMAGE}
   info "MOUNTING HOST:${STORAGE_SRC} --> VM:${STORAGE_DST}"
   ensure_host_storage
   multipass mount ${STORAGE_SRC} ${SINGLE_VM_NAME}:${STORAGE_DST}

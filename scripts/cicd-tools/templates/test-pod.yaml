@@ -1,3 +1,23 @@
+##################################################################################
+#
+# This pod spec can be used to test that local storage is working.
+# To do this, follow these steps after you've ran add-local-storage.sh:
+#   1) create an index.html file in your storage directory (ie ${{storage.path}})
+#       -- the default location is /canonical/labs/cicd/storage/
+#       -- for text, just put (withou quotes): "Hello from Kubernetes Local Storage"
+#   2) create pod - `kubectl create -f configs/test-pod.yaml`
+#   3) verify pod - `kubectl get pod test-pod`
+#   4) login to pod - `kubectl exec -it test-pod -- /bin/bash`
+#   5) verify nginx serves by running curl:
+#       `apt-get update`
+#       `apt-get install curl`
+#       `curl localhost`
+#       `exit`
+#   6) You should see the same text you put into index.html
+#   7) Delete pod - `kubectl delete -f configs/test-pod.yaml`
+#
+##################################################################################
+
 kind: Pod
 apiVersion: v1
 metadata:
