@@ -18,7 +18,31 @@ For this reference example, we'll deploy the entire set of components onto a sin
 
 ## Setup Instructions
 
-The example leverages several scripts. The variables in the scripts can be overwritten without changing the scripts themselves. The following section describes the variables in more detail.
+The example leverages several scripts. The variables in the scripts can be overwritten without changing the scripts themselves. We'll start with a summary of the instructions to follow to setup the software. Then the next section describes the variables in more detail.
+
+### Installation Summary
+
+Here's a summary of the steps. More detail will come in following sections, the emphasis here is on the bare minimum set of steps.
+
+```
+#-- HOST --#
+clone https://github.com/canonical-labs/cicd-microk8s-basic.git
+cd cicd-microk8s-basic
+mp/create-single-vm.sh
+mp/ssh-single-vm.sh # --> VM
+#--  VM  --#
+cd /canonical/labs/cicd/scripts       # eg ${CICD_SCRIPTS_SRC}
+sudo cicd-tools/install-k8s-base.sh
+cicd-tools/add-local-storage.sh
+cicd-tools/install-jenkins.sh
+cicd-tools/expose-dashboard.sh
+
+# [OPTIONAL] strongly advise downloading snaps if you plan on doing install-all a lot.
+# Do this before install-all.sh to get the full benefit.
+cicd-tools/download-snaps.sh
+
+```
+
 
 ### Key variables
 

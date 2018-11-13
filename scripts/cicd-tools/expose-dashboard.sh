@@ -2,6 +2,18 @@
 
 set -u  # fail on undeclared variables
 
+####################################################################################
+#
+# Running this script on the server will do the following:
+# 1) Run kubectl proxy
+# 2) Add an RBAC account and cluster role binding for access
+# 3) Print the token for that relationship (to be used in the UI)
+# 4) Print the URL to use.
+#
+####################################################################################
+
+
+
 PROXY_PORT=${PROXY_PORT:-8001}
 LOCAL_ADDR=${LOCAL_ADDR:-'0.0.0.0'}
 
