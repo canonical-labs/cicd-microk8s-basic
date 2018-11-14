@@ -32,14 +32,14 @@ scripts/mp/create-single-vm.sh
 scripts/mp/ssh-single-vm.sh # --> VM
 #--  VM  --#
 cd /canonical/labs/cicd/scripts       # eg ${CICD_SCRIPTS_SRC}
-sudo cicd-tools/install-k8s-base.sh
-cicd-tools/add-local-storage.sh
-cicd-tools/install-jenkins.sh
-cicd-tools/expose-dashboard.sh
+sudo ./install-k8s-base.sh
+./add-local-storage.sh
+./install-jenkins.sh
+./expose-dashboard.sh
 
 # [OPTIONAL] strongly advise downloading snaps if you plan on doing install-all a lot.
 # Do this before install-all.sh to get the full benefit.
-cicd-tools/download-snaps.sh
+download-snaps.sh
 
 ```
 

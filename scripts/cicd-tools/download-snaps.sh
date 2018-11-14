@@ -15,6 +15,7 @@ SNAPS_DIR="${SCRIPTS_DIR}/snaps"
 
 # If you want a particular version, you can look at info, eg 'snap info microk8s'
 # From that info, you can do something like 'snap download microk8s --channel=<>'
+mkdir -p "${SNAPS_DIR}"
 cd "${SNAPS_DIR}"
 snap download core
 snap download kubectl
