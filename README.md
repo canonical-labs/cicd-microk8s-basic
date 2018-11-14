@@ -28,8 +28,8 @@ Here's a summary of the steps. More detail will come in following sections, the 
 #-- HOST --#
 clone https://github.com/canonical-labs/cicd-microk8s-basic.git
 cd cicd-microk8s-basic
-mp/create-single-vm.sh
-mp/ssh-single-vm.sh # --> VM
+scripts/mp/create-single-vm.sh
+scripts/mp/ssh-single-vm.sh # --> VM
 #--  VM  --#
 cd /canonical/labs/cicd/scripts       # eg ${CICD_SCRIPTS_SRC}
 sudo cicd-tools/install-k8s-base.sh
