@@ -39,7 +39,7 @@ sudo ./install-k8s-base.sh
 
 # [OPTIONAL] strongly advise downloading snaps if you plan on doing install-all a lot.
 # Do this before install-all.sh to get the full benefit.
-download-snaps.sh
+./download-snaps.sh
 
 ```
 
