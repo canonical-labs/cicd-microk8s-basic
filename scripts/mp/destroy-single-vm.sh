@@ -12,9 +12,9 @@ exit_no_multipass
 
 # Only clean the VM if it exists
 if vm_exists ${SINGLE_VM_NAME} ; then
+  info "Deleting and purging VM '${SINGLE_VM_NAME}'."
   multipass delete ${SINGLE_VM_NAME}
   multipass purge
-  info "Deleting and purging VM '${SINGLE_VM_NAME}'."
 else
   info "The VM ${SINGLE_VM_NAME} does **not** exist."
 fi

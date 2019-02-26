@@ -29,8 +29,12 @@ else
       --cpus ${VM_CPUS} \
       --cloud-init ${CLOUD_INIT} \
       ${VM_IMAGE}
+  # Where "permanent data" will be stored
   info "MOUNTING HOST:${STORAGE_SRC} --> VM:${STORAGE_DST}"
   ensure_host_storage
   multipass mount ${STORAGE_SRC} ${SINGLE_VM_NAME}:${STORAGE_DST}
+
+  # Where the scripts are stored 
+  info "MOUNTING HOST:${CICD_SCRIPTS_SRC} --> VM:${CICD_SCRIPTS_DST}"
   multipass mount ${CICD_SCRIPTS_SRC} ${SINGLE_VM_NAME}:${CICD_SCRIPTS_DST}
 fi
