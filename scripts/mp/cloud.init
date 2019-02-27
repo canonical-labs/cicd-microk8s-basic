@@ -2,5 +2,3 @@
 
 runcmd:
 # Ensure the kubeconfig file defaults to microk8s
- - printf "\nexport KUBECONFIG=/snap/microk8s/current/client.config\n" >> /home/multipass/.bashrc
- - printf "export PATH=\${PATH}:~/.jx/bin\n" >> /home/multipass/.bashrc

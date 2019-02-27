@@ -8,6 +8,8 @@ VM_IMAGE=${VM_IMAGE:-"bionic"}
 SINGLE_VM_NAME=${SINGLE_VM_NAME:-"cicd-single"}
 HOME=${HOME:-"temp"}
 STORAGE_SRC=${STORAGE_SRC:-"${HOME}/.canonical/labs/cicd/storage"}
+## ** NB: Whereas we allow to override STORAGE_DST .. cicd install scripts rely on this
+## path .. TODO: add this env var to the .bashrc or some global env list
 STORAGE_DST=${STORAGE_DST:-"/canonical/labs/cicd/storage"}
 ## CICD_SCRIPTS_DST is the location in the VM to place the scripts. The SRC is defined
 ## inside of the script mounting the volume (ie create-single-vm.sh)
