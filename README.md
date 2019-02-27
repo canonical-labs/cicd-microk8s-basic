@@ -26,7 +26,7 @@ Here's a summary of the steps. More detail will come in following sections. The 
 
 ```
 #-- HOST --#
-clone https://github.com/canonical-labs/cicd-microk8s-basic.git cicd
+git clone https://github.com/canonical-labs/cicd-microk8s-basic.git cicd
 cd cicd
 cicd/scripts/mp/create-single-vm.sh
 cicd/scripts/mp/ssh-single-vm.sh
