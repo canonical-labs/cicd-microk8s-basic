@@ -7,7 +7,7 @@ The advent of Kubernetes has benefitted CI/CD initiatives greatly - it gives the
 The reference examples in this repository will focus on a couple of deployment models:
 
 1. Deploy everything in a single server
-2. Deploy everything in a distributed set of servers (not yet started_)
+2. Deploy everything in a distributed set of servers (_not yet started_)
 3. For both of the above we will start simply, using one or more VMs. The benefit is this approach is that many heterogenous environments provide the ability to launch VMs - from laptop to private clouds to public clouds.
 
 We'll describe the initial set of components that the examples deploy, along with a list of the complete set of components available in this repo.
@@ -64,4 +64,4 @@ download-snaps.sh
 
 # Distributed
 
-(TBD)
+(__TBD__)
