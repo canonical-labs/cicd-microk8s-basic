@@ -43,7 +43,7 @@ sudo /canonical/labs/cicd/scripts/install-microk8s.sh
 #-- OPTIONAL --#
 # if you plan on doing install-all a lot - strongly advise downloading snaps
 # Do this before install-microk8s.sh to get the full benefit.
-download-snaps.sh
+./download-snaps.sh
 
 ```
 
